@@ -4,10 +4,15 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "coches")
@@ -17,11 +22,15 @@ public class Coche implements Serializable{
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, length=50)
-	private String marca;
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name="codCliente")
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Long marca;
 	
-	@Column(nullable = false, length=50)
-	private String modelo;
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name="codCliente")
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Long modelo;
 	
 	@Column(length=50)
 	private String motor;
@@ -40,19 +49,19 @@ public class Coche implements Serializable{
 		this.id = id;
 	}
 
-	public String getMarca() {
+	public Long getMarca() {
 		return marca;
 	}
 
-	public void setMarca(String marca) {
+	public void setMarca(Long marca) {
 		this.marca = marca;
 	}
 
-	public String getModelo() {
+	public Long getModelo() {
 		return modelo;
 	}
 
-	public void setModelo(String modelo) {
+	public void setModelo(Long modelo) {
 		this.modelo = modelo;
 	}
 

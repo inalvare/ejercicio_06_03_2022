@@ -1,7 +1,13 @@
-INSERT INTO coches (marca, modelo, motor, cilindrada , velocidad) VALUES("Onda","el primero","ascd21",300,100);
-INSERT INTO coches (marca, modelo, motor, cilindrada , velocidad) VALUES("Toyota","el segundo","dskjdk32",300,100);
-INSERT INTO coches (marca, modelo, motor, cilindrada , velocidad) VALUES("Ferrari","el tercero","rkj24ms",300,100);
-INSERT INTO coches (marca, modelo, motor, cilindrada , velocidad) VALUES("BMW","el cuarto","fhi23nfc",300,100);
+INSERT INTO marcas (nombre) VALUES('Onda');
+INSERT INTO marcas (nombre) VALUES('Toyota');
+
+INSERT INTO modelos (nombre) VALUES('el primero');
+INSERT INTO modelos (nombre) VALUES('el segundo');
+
+INSERT INTO coches (marca, modelo, motor, cilindrada , velocidad) VALUES(2,"1,"ascd21",300,100);
+INSERT INTO coches (marca, modelo, motor, cilindrada , velocidad) VALUES(1,"2,"dskjdk32",300,100);
+INSERT INTO coches (marca, modelo, motor, cilindrada , velocidad) VALUES(1,2,"rkj24ms",300,100);
+INSERT INTO coches (marca, modelo, motor, cilindrada , velocidad) VALUES(2,1,"fhi23nfc",300,100);
 
 INSERT INTO `usuarios` (username,password,enabled) VALUES('iñigo','$2a$10$Jf1B1DvYy3spSruEe8kf4OXx1jeyPaOgTHPgXiUaUQQ/s/O.PWhbu',1);
 INSERT INTO `usuarios` (username,password,enabled) VALUES('admin','$2a$10$8t2e9DEl.ZSajFHzwu/JKexkpmgoIpH6JQsK.rWlseVjAxCCzuf/K',1);
